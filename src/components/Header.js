@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { fakeimage } from '../utility/Fakemovie';
+import { Link } from 'react-router-dom';
 const Header = () => {
     const[login,setLogin] = useState('Login')
     return (
@@ -11,9 +12,9 @@ const Header = () => {
 
             <div className='nav-items'>
                 <ul>
-                     <li>Home</li>
-                     <li>Tv Shows</li>
-                     <li>Movies</li>
+                 <Link to="/" ><li>Home</li></Link>   
+                  <Link to="/Tvshow"><li>Tv Shows</li></Link>   
+                  <Link to="/Movies"><li>Movies</li></Link>   
                      <li>Documentary</li>
                      <button onClick={()=> login === 'Login' ? setLogin('Logout') : setLogin('Login')}>{login}</button>
                 </ul>
