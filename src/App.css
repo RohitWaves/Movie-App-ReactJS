@@ -34,7 +34,7 @@
 
 /* Style links within list items */
 .nav-items li:hover {
-  color: #ff5733; /* Change text color on hover */
+  color: white; /* Change text color on hover */
 }
 
 /* Style the movie card container */
@@ -205,5 +205,46 @@ input {
     background-position: 200% 0;
   }
 }
+
+/* Card Container */
+.card {
+  width: 300px; /* Set the desired width of the card */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  display: inline-block; /* To keep multiple cards side by side */
+}
+
+/* Image Styling */
+.movie-img {
+  width: 100%; /* Make the image width 100% of the card */
+  border-radius: 8px;
+}
+
+/* Title Styling */
+h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* Rating Styling */
+.rating {
+  color: #f39c12; /* Change the color to your preference */
+}
+
+/* Price Styling */
+.price {
+  color: #e74c3c; /* Change the color to your preference */
+}
+
+/* Description Styling */
+.description {
+  font-size: 14px;
+}
+
+/* Apply additional styles as needed */
+
 
 
