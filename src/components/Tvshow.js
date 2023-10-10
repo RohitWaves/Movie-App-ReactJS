@@ -1,9 +1,9 @@
 import React from "react";
-import Body from "./Body";
+import Home from "./Home";
 const Tvshow = () => {
     return (
         <div>
-           <Body />
+           <Home />
         </div>
     )
 }

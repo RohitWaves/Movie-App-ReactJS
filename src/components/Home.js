@@ -3,7 +3,7 @@ import Moviecard from "./Moviecard";
 import { movies } from "../utility/Moviedata";
 import Shimmer from "./Shimmer";
 
-const Body = () => {
+const Home = () => {
 
     const[movie,setMovie] = useState(movies);
 
@@ -42,4 +42,4 @@ const Body = () => {
     )
 }
 
-export default Body;
+export default Home;

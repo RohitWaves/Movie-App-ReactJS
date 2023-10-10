@@ -1,8 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem } from '../utility/Cartslice';
+import { clearCart } from '../utility/Cartslice';
+import { useEffect } from 'react';
 //import Moviecard from './Moviecard';
 //import Cart from './Cart';
+import { useNavigate } from 'react-router-dom';
 
 
   const Cart = (props) => {
@@ -22,15 +25,23 @@ import { removeItem } from '../utility/Cartslice';
        dispatch(removeItem())
     }
 
+    const clearItem = () => {
+        dispatch(clearCart())
+    }
+
+    
+
     return (
         
         <div>
-            
+             <button onClick={() => clearItem()}>Clear Cart</button>
         {/*   <Moviecard resmovies={cartItems}/> */}
-
+       
         {
+       
           movielist.map((data) => {
             return (
+             
               <div class="card">
               <img src={data?.img} class='movie-img' />
               <h3>{data?.title}</h3>
