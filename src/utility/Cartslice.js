@@ -5,7 +5,7 @@ const Cartslice = createSlice({
     initialState: {
         items: [],
     } ,
-  // Redux toolkit uses Immer behind the scenes
+  // Redux toolkit uses Immer behind the scenes.
     reducers: {
         addItem: (state,action) => {
            // console.log(state,action,"reducer") //

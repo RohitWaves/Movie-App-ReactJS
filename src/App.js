@@ -14,24 +14,30 @@ import AuthGuard from './Guard/Authguard';
 import Home from './components/Home';
 import Login from './components/Login';
 import Authguard from './Guard/Authguard';
+import Category from './components/Category';
 //import Register from './components/Register';
 function App() {
+
   const [isLoggedIn, setisLoggedIn] = useState(null);
+
   const logIn = () => {
     setisLoggedIn(true);
   };
-  const logOut = () => {
+   
+  const logout = () => {
     setisLoggedIn(false);
   };
 
   return (
     <div>
        <Provider store={Appstore}>
+
          <BrowserRouter>
+
            <Header />
 
            {isLoggedIn ? (
-       <button onClick={logOut}>Logout</button>
+       <button onClick={logout}>Logout</button>
      ) : (
        <button onClick={logIn}>Login</button>
      )}
@@ -62,6 +68,7 @@ function App() {
             {/* <Route path="/" element={<Home />} /> */}
              <Route path="/Tvshow" element={<Tvshow />} />
              <Route path="/Movies" element={<Movie />} />
+             <Route path="/category" element={<Category />} />
            {/*  <Route path="/cart" element={<Cart />} /> */}
             
            {/*  <Route path="/register" element={<Protected Component={Register}/>} /> */}

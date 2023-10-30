@@ -1,7 +1,9 @@
 import React,{useState} from "react";
 import Moviecard from "./Moviecard";
 import { movies } from "../utility/Moviedata";
+import LoaderComp from "./Loader";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utility/userOnlineStatus";
 
 const Home = () => {
 
@@ -18,13 +20,22 @@ const Home = () => {
          const data = movie.filter((info) => info.title.toLowerCase().includes(text.toLowerCase()));
          return data;
      }
-     
-    return movie.length === 0 ? (<Shimmer />) : (
 
-        <div className="movie-container">
+     const online = useOnlineStatus()
+     if(online === false) 
+       return (
+          <h1>Looks like you are offline! Please check your internet connection </h1>
+       )
+
+     
+     
+    return movie.length === 0 ? (<LoaderComp />) : (
+
+         <div className="movie-container">
            <div className="search">
             <button onClick={() => setMovie(Topmovies())}>Top Rated Movie</button>
-         </div>
+          </div>
+
          <div>
            <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
            <button onClick={()=>setMovie(Searchmovies())}>Search Shows</button>
